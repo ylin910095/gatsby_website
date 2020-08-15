@@ -20,6 +20,21 @@ require(`katex/dist/katex.min.css`)
 
 deckDeckGoHighlightElement();
 
+// Disable SSR so the webpage doesnt have to render twice
+// for mobile devices (because default is desktop 960px width)
+class NoSSR extends React.Component {
+  state = {
+    isClient: false
+  }
+  componentDidMount() {
+     this.setState({ isClient: true })
+  }
+  render() {
+    const { isClient } = this.state
+    const { children } = this.props
+    return isClient ? children : null;
+  }
+}
 
 class Layout extends React.Component {
   render(props){
@@ -32,8 +47,8 @@ class Layout extends React.Component {
         }
       }
     `)
-
     return (
+      <NoSSR>
       <CustomMDXProvider>
         <div style={{ maxWidth: this.props.pagewidth, margin: `0 auto`,}}>
           <Header isMobile={this.props.isMobile}></Header>
@@ -51,6 +66,7 @@ class Layout extends React.Component {
           </div>
         </div>
       </CustomMDXProvider>
+      </NoSSR>
     )
   }
 }

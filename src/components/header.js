@@ -35,14 +35,14 @@ const DesktopHeader = () => {
             <li style={{ display:`inline` }}><a href="/research" style={{fontSize:'1.5rem'}} >Research</a></li>
             <li style={{ display:`inline` }}><a href="/CV" style={{fontSize:'1.5rem'}} >CV</a></li>
             <li style={{ display:`inline` }}><a href="/contact" style={{fontSize:'1.5rem'}} >Contact</a></li>
-            <li style={{ display:`inline`, textAlign: `right`}}>
+            <li style={{ display:`inline`}}>
               <MakeGithub />
             </li>
-            
         </ul>
       </div>
       <hr style={{
         color: 'white',
+        clear: 'both',
         backgroundColor: 'white',
         height: '0.15rem',
         borderColor : 'white'

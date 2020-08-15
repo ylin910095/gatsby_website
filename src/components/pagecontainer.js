@@ -1,13 +1,29 @@
 import React from "react"
 
+function getPageSize() {
+  const desktopWidth = 960; // in px
+  const minWidth = 300;
+  const mobilePad = 20;
+  if (typeof window == `undefined`) {
+    return [-1, false];
+  } else if (window.innerWidth >= desktopWidth) {
+    return [desktopWidth, false]
+  } else if (window.innerWidth > minWidth) {
+    return [window.innerWidth-mobilePad, true]
+  } else {
+    return [minWidth - mobilePad, true]
+  }
+}
+
 class PageContainer extends React.Component {
   constructor(props) {
     super(props)
+    var [width, isMobile] = getPageSize();
     this.state = {
-      width: 1000, // default width
-      isMobile: false
+      width: width, // default width
+      isMobile: isMobile
     }
-  }
+}
   
   componentDidMount() {
     this.handleWindowSizeChange() // Set width
@@ -21,17 +37,8 @@ class PageContainer extends React.Component {
   }
 
   handleWindowSizeChange = () => {
-    const desktopWidth = 960; // in px
-    const minWidth = 300;
-    const mobilePad = 20;
-    if (window.innerWidth >= desktopWidth) {
-      this.setState({ width: desktopWidth, isMobile: false})
-    } else if (window.innerWidth > minWidth) {
-      this.setState({ width: window.innerWidth-mobilePad, isMobile: true})
-    } else (
-      this.setState({ width: minWidth-mobilePad, isMobile: true})
-    )
+    var [width, isMobile] = getPageSize();
+    this.setState({ width: width, isMobile: isMobile})
   }
 }
-
 export default PageContainer

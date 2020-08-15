@@ -12,12 +12,9 @@
 }
 
 .iconBorder {
-    border-style: solid;
-    border-color: transparent;
-    border-radius: 0.6rem; /* Making border radius */
     padding: 0.rem 0.rem 0.rem 0.rem; /* Making space around letters */
     position: relative;
-    top: 0px;
+    margin-top: 0.89rem;
+    margin-bottom: 0.0rem;
     float: right;
-    margin-top: 0.8rem;
 }
