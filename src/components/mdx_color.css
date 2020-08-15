@@ -1,0 +1,28 @@
+/* for gatsby-remark-highlight-code plugin */
+deckgo-highlight-code {
+    --deckgo-highlight-code-background: #282a36;
+    --deckgo-highlight-code-border-radius: 0.2rem;
+    --deckgo-highlight-code-padding: 0.6rem 1rem;
+}
+
+inlinecode.inlineCodeMDX {
+    background-color: #282a36;
+    border-radius: 0.2rem;
+    padding: 0.1rem 0.3rem;
+}
+
+/* Formatting bullets in the list */
+li.liMDX::before {
+    content: "\2022 ";
+    white-space: pre; 
+    color: white;
+    opacity: 0.86;
+    font-weight: bold;
+}
+a.aMDX {
+    color: #09b877;
+}
+/* After clicking */
+a.aMDX:focus {
+    color: #ffcc66;
+}

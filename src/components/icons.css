@@ -1,0 +1,23 @@
+.burgerBorder {
+    border-style: solid;
+    border-color: white;
+    border-radius: 10px; /* Making border radius */
+    font-size: 25px;
+    padding: 0.3rem 0.3rem 0.1rem 0.3rem; /* Making space around letters */
+    position: relative;
+    top: 0px;
+    float: right;
+    margin-top: 0.15rem;
+    margin-right: 0.5rem;
+}
+
+.iconBorder {
+    border-style: solid;
+    border-color: transparent;
+    border-radius: 0.6rem; /* Making border radius */
+    padding: 0.rem 0.rem 0.rem 0.rem; /* Making space around letters */
+    position: relative;
+    top: 0px;
+    float: right;
+    margin-top: 0.8rem;
+}

@@ -4,46 +4,56 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-
+import { StaticQuery, graphql } from "gatsby"
+import { CustomMDXProvider } from "./mdx_color.js"
 import Header from "./header"
 import "./layout.css"
+import "./mdx_color.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
+// Code highlight configuration with gatsby-remark-highlight-code
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+
+// For latex rendering
+require(`katex/dist/katex.min.css`)
+
+deckDeckGoHighlightElement();
+
+
+class Layout extends React.Component {
+  render(props){
+    const data = StaticQuery(graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
         }
       }
-    }
-  `)
+    `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    return (
+      <CustomMDXProvider>
+        <div style={{ maxWidth: this.props.pagewidth, margin: `0 auto`,}}>
+          <Header isMobile={this.props.isMobile}></Header>
+          <div
+            style={{
+              margin: `0 auto`,
+              padding: `0.0rem 0.0rem`,
+            }}
+          >
+            <main>
+              <div style={{marginTop: `2rem`}}>
+                {this.props.children}
+              </div>
+            </main>
+          </div>
+        </div>
+      </CustomMDXProvider>
+    )
+  }
 }
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
