@@ -1,1 +1,1 @@
-Personal website with [Gatsby](https://www.gatsbyjs.com/). `Master` contains the source code and `gh-pages` contains the published htmls.
+Personal website built with [Gatsby](https://www.gatsbyjs.com/). `Master` contains the source code and `gh-pages` contains the published htmls.
