@@ -7,7 +7,8 @@ export function CustomMDXProvider({ children }) {
         components={{
           inlineCode : props => <inlineCode  {...props} className='inlineCodeMDX'/>,
           li: props => <li {...props} className='liMDX'/>,
-          a: props => <a {...props} className='aMDX'/>
+          a: props => <a {...props} className='aMDX'/>,
+          hr: props => <hr {...props} className='hrMDX'/>
         }}>
         {children}
       </MDXProvider>

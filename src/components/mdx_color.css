@@ -26,3 +26,9 @@ a.aMDX {
 a.aMDX:focus {
     color: #ffcc66;
 }
+
+/* After clicking */
+hr.hrMDX{
+    color: white;
+    opacity: 0.5;
+}
