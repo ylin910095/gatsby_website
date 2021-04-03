@@ -10,7 +10,7 @@ class ResearchPage extends PageContainer {
     return(
     <Layout isMobile={this.state.isMobile} 
             pagewidth={this.state.width}>
-        <SEO title="Research" />
+        <SEO title="Publications" />
         <Research />
     </Layout>
     )
