@@ -32,7 +32,7 @@ const DesktopHeader = () => {
         </h1>
         <ul style={{ display:`inline` }}>
             <li style={{ display:`inline` }}><a className="active" href="/" style={{fontSize:'1.5rem'}}>Home</a></li>
-            <li style={{ display:`inline` }}><a href="/research" style={{fontSize:'1.5rem'}} >Research</a></li>
+            <li style={{ display:`inline` }}><a href="/research" style={{fontSize:'1.5rem'}} >Publications</a></li>
             <li style={{ display:`inline` }}><a href="/CV" style={{fontSize:'1.5rem'}} >CV</a></li>
             <li style={{ display:`inline` }}><a href="/contact" style={{fontSize:'1.5rem'}} >Contact</a></li>
             <li style={{ display:`inline`}}>
@@ -56,7 +56,7 @@ function DropMenu() {
     <div className="topnav">
       <ul style={{marginTop: '30px'}}>
         <li className="mobile"><a href="/" style={{fontSize:'1.5rem'}}>Home</a></li>
-        <li className="mobile"><a href="/research" style={{fontSize:'1.5rem'}} >Research</a></li>
+        <li className="mobile"><a href="/research" style={{fontSize:'1.5rem'}} >Publications</a></li>
         <li className="mobile"><a href="/CV" style={{fontSize:'1.5rem'}} >CV</a></li>
         <li className="mobile"><a href="/contact" style={{fontSize:'1.5rem'}} >Contact</a></li>
       </ul>
