@@ -18,8 +18,8 @@ class ContactPage extends PageContainer {
                 <FaEnvelope size={"1.2rem"}/>
             </div>
             <div style={{display: `inline`}}>
-                <a href="mailto:&#121;&#105;&#110;&#048;&#049;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;">
-                    &#121;&#105;&#110;&#048;&#049;&#064;&#117;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#046;&#101;&#100;&#117;  
+                <a href="mailto:yin01@mit.edu">
+                    yin01@mit.edu  
                 </a>
             </div>
         </div>
